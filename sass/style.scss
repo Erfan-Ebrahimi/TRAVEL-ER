@@ -1,0 +1,890 @@
+//----------------     variables   ----------------//
+$green:rgb(33, 145, 80);
+$black:rgb(16, 34, 27);
+$white:#fff;
+$light-bg:rgba(238, 238, 238, 0.473);
+$box-shadow:0 1rem 1rem rgba(33, 145, 80, .5);
+$font-1:'Poppins', sans-serif;
+$font-2:'Fuzzy Bubbles', cursive;
+$font-3:'Montserrat', sans-serif;
+
+
+//-----------------     MIXINS   -----------------//
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax($val,1fr));
+    gap:1.5rem;
+}
+@mixin box-style-background {
+        @content; 
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background-size: cover !important;
+        background-position: center !important;
+        padding: 2rem 9%;
+           
+}
+@mixin border {
+    @content; 
+    border:.2rem solid;
+    border-image-slice: 1;
+    border-image-source:linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+}
+@mixin btn {
+    @content; 
+    border:.2rem solid;
+    border-image-slice: 1;
+    border-image-source:linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+    margin-top: 1rem;
+    display: inline-block;
+    color: $black;
+    cursor: pointer;
+    background: none;
+    font-size: 1.7rem;
+    font-family:$font-3;
+    padding: 1rem 3rem;
+    &:hover{
+        color: $white;
+        background: $black;
+    }
+}
+@mixin h1{   
+    @content; 
+    font-size: 5rem;
+    color: $black;
+    text-align: center;
+    margin-bottom: 4rem;
+    border-bottom:.2rem solid;
+    border-image-slice: 1;
+    border-image-source:linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+    
+}
+//-----------------      FONTS   ------------------//
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;1,100;1,300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+
+
+* {
+  font-family: $font-1;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  -webkit-transition: .2s linear;
+  transition: .3s linear;
+}
+html{
+    background: $light-bg;
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+
+    &::-webkit-scrollbar{
+        width: 1rem;
+    }
+    &::-webkit-scrollbar-track{
+        background: $white;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: $black;
+    }
+}
+section{
+    padding: 5rem 9%;
+}
+//--------------------  HEADER    -----------------// 
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    z-index: 30;
+    .logo{
+       margin-right: auto;
+       margin-left: 1rem;
+       font-size: 2.5rem;
+       color: $black;
+       font-weight: bolder;
+       display: flex;
+       align-content: center;
+       align-items: stretch;
+    //    position: relative;
+       i{
+        margin-top: .4rem;
+        color: $green;
+        padding-right: .25rem;
+        // position: absolute;
+        // top: .8rem;
+        // left:-2.5rem;
+       }
+       .logo-dot{
+        color: $green;
+        font-size: 3rem;
+       }
+       span{
+       font-family: 'Fuzzy Bubbles', cursive;
+       }
+    }
+    .navbar{
+        a{
+            margin-left: 2rem;
+            color: $black;
+            font-size: 2rem;
+        
+        }
+        a:hover{
+            color:$green;
+        }
+        #nav-close{
+            font-size:4rem;
+            display: none;
+            color: $black;
+            cursor: pointer;
+        }
+    }
+    .icons a,
+    .icons div{
+        font-size: 2.5rem;
+        margin-left: 2rem;
+        cursor: pointer;
+        color: $black;
+    }
+    .icons a:hover,
+    .icons div:hover{
+        color: $green;
+    }
+    #menu-btn{
+        display: none;
+    }
+    &.active-h{
+        background: $white;
+        box-shadow: $box-shadow;
+    }
+}
+//--------------------  SEARCH   ------------------//
+.search-form{
+    position: fixed;
+    top: 0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background: rgb(5 34 2 / 80%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transform: translateY(-110%);
+    //baray button search
+    &.active-s{
+    transform: translateY(0%);
+    }
+    #close-search{
+        position: absolute;
+        top: 2.5rem;
+        right: 2.5rem;
+        color: $white;
+        cursor: pointer;
+        font-size: 4rem;
+        &:hover{
+            color: $green;
+
+        }
+    }
+    form{
+        width: 70rem;
+        margin:0 2rem;
+        padding-bottom: 1rem;
+        border-bottom:2px solid rgb(6, 245, 26);
+        display: flex;
+        align-items: center;
+    }
+    input{
+        width: 100%;
+        font-size: 2.1rem;
+        color:$white;
+        background: none;
+        text-transform: none;
+        padding: 0.7rem;
+        font-family: $font-3;
+        &::placeholder{
+            color:$white;
+        }
+    }
+    label{
+        font-size: 2.4rem;
+        cursor: pointer;
+        color: $white;
+        padding-top: 1.5rem;
+        &:hover{
+            color:$green;
+        }
+    }
+}
+//---------------------  HOME   -------------------//
+.home{
+    padding: 0;
+
+    .box-1{
+        @include box-style-background{
+            justify-content: flex-end;
+        }
+    }
+    .box-2{
+        @include box-style-background{
+            justify-content: flex-start;
+        }
+    }
+    .box-3{
+        @include box-style-background{
+            justify-content: flex-end;
+        }
+    }
+    .content{
+        width: 50rem;
+        text-align: center;
+        max-width: 380px;
+        span{
+            font-size: 4rem;
+            color: $black;
+        }
+        h3{
+            font-size: 6rem;
+            color: $green;
+            padding-top: .5rem;
+            text-transform: uppercase;
+        }
+        p{
+            line-height: 2;
+            color: $black;
+            font-size: 1.5rem;
+            padding: 1rem 0;
+        }
+    .btn{
+            @include btn();
+        }
+    } 
+    .swiper-button-next::after,
+    .swiper-button-prev::after{
+        font-size: 3rem;
+        color: $black;
+        opacity: .7;
+    }
+
+}
+//-------------------- CATEGORY -------------------//
+.category{
+    h1{
+        @include h1;
+    }
+    .box-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .box{
+        text-align: center;
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+    .box:hover{
+        box-shadow: $box-shadow;
+        padding: 1rem;
+    }
+    img{
+        height: 20rem;
+        width: 20rem;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+    }
+    h3{
+        font-size: 2rem;
+        color: $green;
+    }
+    p{
+        font-size: 1.6rem;
+        color: $black;
+        padding: 1rem 0;
+        line-height: 2;
+    }
+    .btn{
+        @include btn;
+        font-weight: 800;
+
+    }
+}
+//--------------------  ABOUt  --------------------//
+.about{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    background: $light-bg;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    .image{
+        padding-bottom: 1rem;
+        img{
+            width:100%;
+            box-shadow:1rem 1rem 1rem rgb(33 145 80 / 32%);
+            border-radius: 1rem;
+        }
+    }
+    .content{
+
+        h3{
+            font-size: 3rem;
+            color: $green;
+        }
+        p{
+            font-size: 1.4rem;
+            font-weight: 500;
+            color:$black;
+            padding:1rem 0;
+            line-height: 2;
+            text-align:center;
+        }
+        .btn{
+            @include btn()
+        }
+    }
+}
+//--------------------  SHOP   --------------------//
+.shop{
+    .slide{
+        width: 35rem;
+        @include border;
+    }
+    .slide:hover{
+        .icons{
+            transform: translateY(0);
+        }
+    }
+    .image{
+        position: relative;
+        overflow: hidden;
+        height: 30rem;
+        width: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .icons{
+            width: 100%;
+            position: absolute;
+            bottom: 2rem;
+            left: 0;
+            text-align: center;
+            z-index: 10;
+            transform: translateY(7rem);
+        }
+        .icons a{
+            height: 4.5rem;
+            width: 4.5rem;
+            line-height: 4.5rem;
+            font-size: 1.7rem;
+            background: $black;
+            color: $white;
+            margin: 0 .2rem;
+            border-radius: 1rem;
+        }
+        .icons a:hover{
+            background: $green;
+        }
+    }
+    .content{
+        padding: 1rem 0;
+        text-align: center;
+        h3{
+            font-size: 2rem;
+            color: $black;
+        }
+        .price{
+            padding: 1rem 0;
+            font-size: 2.5rem;
+            color: $green;
+        }
+        .stars i{
+            font-size: 1.7rem;
+            color: $black;
+        }
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after{
+        font-size: 3rem;
+        color: $black;
+        opacity: .7;
+    }
+}
+//-------------------  PACKAGE   ------------------//
+.packages{
+    background: $light-bg;
+    h1{
+    @include h1;
+    }
+    .box-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .box{
+        @include border;
+        text-align: center;
+        background: $white;
+        flex: 1 1 26rem;
+    }
+    .box:hover{
+        background: $black;
+        .content p , a{
+            color: $white;
+        }
+        .content h3{
+            color: $green;
+        }
+        .btn:hover{
+            background: $white;
+            color: $black;
+        }
+    }
+    .image{
+        height: 25rem;
+        overflow: hidden;
+        padding: 2rem;
+        padding-bottom: 0;
+        border-radius: 1rem;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit:cover;
+            border-radius: 1rem;
+        }
+    }
+    .content{
+        padding: 2rem;
+        h3{
+            font-size: 2rem;
+            color: $black;
+        }
+        p{
+            font-size: 1.5rem;
+            color: $black;
+            padding:1rem 0;
+            line-height: 2;
+        }
+        .price{
+            font-size: 2rem;
+            color: $green;
+        }
+        .btn{
+            @include btn;
+        }
+    }
+}
+//-------------------  REVIEWS   ------------------//
+.reviews{
+    h1{
+        @include h1;
+    }
+    .user{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        img{
+            height: 7rem;
+            width: 7rem;
+            border-radius: 50%;
+        }
+        span{
+            color: $green;
+            font-size: 1.5rem;
+        }
+    }
+    .user::before{
+        content: "";
+        position: absolute;
+        top: 8.6rem;
+        left: 1.7rem;
+        height: 3rem;
+        width: 3rem;
+        background: rgb(76, 110, 78);
+        transform: rotate(45deg);
+    }
+    .text{
+        position: relative;
+        padding: 2rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        font-style: italic;
+        background: rgb(76, 110, 78);
+        border-radius: 1rem;
+        color: $white;
+        line-height: 2;
+        z-index: 0;
+        margin-top: 3rem;
+    }
+   
+    
+}
+//-------------------  SERVICES   -----------------//
+.services{
+    background: $light-bg;
+    h1{
+        @include h1;
+    }
+    .box-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .box{
+        padding: 2rem;
+        @include border;
+        text-align: center;
+        background: $white;
+        flex: 1 1 30rem;
+    }
+    .box:hover{
+        background:$green;
+         *{
+            color: $white;
+        }
+        h3{
+            color: $black;
+        }
+        .btn:hover{
+            background: $white;
+            color: $black;
+        }
+    }
+    h3{
+        font-size: 2rem;
+        color: $black;
+    }
+    p{
+        font-size: 1.5rem;
+        color: $black;
+        padding:1rem 0;
+        line-height: 2;
+    }
+    .btn{
+        @include btn
+    }
+   
+}
+//-------------------    BLOGS   ------------------//
+.blogs{
+    h1{
+        @include h1;
+    }
+    .slide{
+        text-align: center;
+        padding: 2rem;
+        width: 35rem;
+    }
+    img{
+        height: 25rem;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+    .icons{
+        position: relative;
+        border-radius: 1rem;
+        padding: 1rem;
+        background: $black;
+        top: -2rem;
+        display: inline-block;
+        a{
+            font-size: 1.4rem;
+            color: $white;
+            margin: 0 1rem;
+        }
+        a:hover{
+            color: $green;
+        }
+        i{
+            padding-right: .5rem;
+            color: $green;
+        }
+    }
+    h3{
+        font-size: 2rem;
+        color: $black;
+    }
+    p{
+        font-size: 1.5rem;
+        padding: 1rem 0;
+        line-height: 2;
+        color: $black;
+    }
+    .btn{
+        @include btn;
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after{
+        display: none;
+    }
+}
+//------------------ NEWSLETTER   -----------------//
+.newsletter{
+    background: $light-bg;
+    h1{
+        @include h1;
+    }
+    .content{
+        margin: 1rem auto;
+        text-align: center;
+        max-width: 70rem;
+    }
+    p{
+        font-size: 1.5rem;
+        line-height: 2;
+        color: $black;
+    }
+    form{
+        @include border;
+        margin-top: 2rem;
+        background: $white;
+        border-radius: 1rem;
+        padding: .7rem;
+        display: flex;
+    }
+    .email{
+        width: 100%;
+        background: none;
+        text-transform: none;
+        font-size: 1.9rem;
+        color: $black;
+        padding: 0 1.3rem;
+    }
+    .btn{
+        @include btn;
+        margin-top: 0;
+        background: $black;
+        color: $white;
+    }
+    .btn:hover{
+        background: none;
+        color: $black;
+    }
+}
+//------------------  CLIENTS   -------------------//
+.clients{
+    .swiper-button-next::after,
+    .swiper-button-prev::after{
+        font-size: 3rem;
+        color: $black;
+        position: absolute;
+    }
+}
+//------------------  FOOTER   --------------------//
+.footer{
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),url(../images/footer-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    align-items: center;
+    .box-container{
+        display: flex;
+        margin: 1rem auto;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .box{
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 29rem;
+    }
+    h3{
+        font-size: 2rem;
+        padding: 1.5rem 0;
+        color: $white;
+    }
+    a{
+        display: block;
+        font-size: 1.5rem;
+        color: $white;
+        padding: 1rem;
+        font-weight: 600;
+    }
+    i{
+        color: $green;
+        padding-right: .5rem;
+        font-size: 2rem;
+    }
+    .box:hover{
+        *{
+            color: $green;
+        }
+        i{
+            color: rgb(11, 221, 22);
+        }
+    }
+    a:hover{
+        i{
+            padding-right: 1rem;
+        }
+    }
+    .credit{
+        text-align: center;
+        margin-top: 2.5rem;
+        padding: 1rem;
+        padding-top: 2.5rem;
+        font-size: 2rem;
+        color: $white;
+        span{
+            color: burlywood;
+        }
+    }
+
+}
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    MEDIA QUERY    //
+@media (min-width:1200px) {
+    .packages .image img{
+        object-fit: contain;
+    }
+}
+@media(max-width:1200px){
+    .header{
+        padding: 2rem;
+    }
+    section{
+        padding: 3rem 2rem;
+    }
+    
+}
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+    }
+    .home .box-1{
+        padding: 3rem;
+        justify-content: center;
+        background-position: right !important;
+    }
+    .home .box-2{
+        padding: 2rem;
+        justify-content: center;
+        background-position: left !important;
+    }
+    .home .box-3{
+        padding: 2rem;
+        justify-content: center;
+        background-position: right !important;
+    }
+    .home .content{
+        text-align: center !important;
+        span{
+            font-size: 3rem;
+        }
+        h3{
+            font-size: 4rem;
+        }
+    }
+    .category .box-container{
+        flex-wrap: wrap;
+
+    }
+    .about{
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+    }
+}
+@media(max-width:768px){
+    .header #menu-btn{
+        display: inline-block;
+    }
+    .navbar{
+        position: fixed;
+        top: 0;
+        left:-110%;
+        background: $white;
+        z-index: 100;
+        width: 35rem;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        //in class dar asl menu ro neshon mide chon menu -110% rafte onvar v in myarash sar jash
+        &.active-n{
+            box-shadow:0 0 0 100vw rgba(0,0,0,.8);
+            left:0;
+            
+        }
+        
+    }
+   
+    .navbar a{
+        margin: 1rem 0;
+        align-items: center;
+        font-size: 4rem;
+        
+    }
+    #nav-close{
+        display:block !important;
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+    }
+    .about{
+        flex-wrap: wrap;
+        text-align: center;
+        
+    }
+    
+    
+}
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+    .home{
+        .content .btn{
+            font-weight: 600;
+        }
+        
+        .swiper-button-next::after,
+        .swiper-button-prev::after{
+            display: none;
+        }
+    }
+    .shop , .packages{
+        h1{
+            font-size: 3.5rem;
+        }
+    }
+
+}
