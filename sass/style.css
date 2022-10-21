@@ -802,6 +802,7 @@ section {
   padding-right: 1rem;
 }
 .footer .credit {
+  text-transform: none;
   text-align: center;
   margin-top: 2.5rem;
   padding: 1rem;
