@@ -40,17 +40,21 @@ $box-shadow:0 1rem 1rem rgba(18, 11, 74, 0.523);
         background-position: center !important;
         padding: 2rem 9%;
 }
-@mixin border {
+@mixin border-bottom {
     @content; 
-    border:.2rem solid;
+    border-bottom:.4rem solid;
     border-image-slice: 1;
     border-image-source:linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
 }
+@mixin border{
+    @content;
+    border: .2rem solid $black3;
+    border-radius: .5rem;
+}
 @mixin btn {
     @content; 
-    border:.2rem solid;
-    border-image-slice: 1;
-    border-image-source:linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+    border: .2rem solid $black3;
+    border-radius: .5rem;
     margin-top: 1rem;
     display: inline-block;
     color: $black1;
@@ -222,10 +226,10 @@ section{
         }
     }
     form{
+        @include border-bottom;
         width: 70rem;
         margin:0 2rem;
         padding-bottom: 1rem;
-        border-bottom:2px solid rgb(6, 245, 26);
         display: flex;
         align-items: center;
     }
@@ -876,13 +880,21 @@ section{
         margin: 1rem 0;
         align-items: center;
         font-size: 4rem;
-        
+        color: $white4 !important;
+    }
+
+    .navbar a:hover{
+        color:$blue !important;
     }
     #nav-close{
         display:block !important;
         position: absolute;
         top: 1rem;
         right: 2rem;
+        color: $white4 !important;
+    }
+    #nav-close:hover{
+    color: $blue !important;
     }
     .about{
         flex-wrap: wrap;

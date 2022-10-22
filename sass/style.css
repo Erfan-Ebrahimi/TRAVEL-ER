@@ -137,10 +137,12 @@ section {
   color: #219150;
 }
 .search-form form {
+  border-bottom: 0.4rem solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
   width: 70rem;
   margin: 0 2rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid rgb(6, 245, 26);
   display: flex;
   align-items: center;
 }
@@ -224,9 +226,8 @@ section {
   padding: 1rem 0;
 }
 .home .content .btn {
-  border: 0.2rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
   color: #333a56;
@@ -287,9 +288,8 @@ section {
   line-height: 2;
 }
 .category .btn {
-  border: 0.2rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
   color: #333a56;
@@ -335,9 +335,8 @@ section {
   text-align: center;
 }
 .about .content .btn {
-  border: 0.2rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
   color: #333a56;
@@ -354,9 +353,8 @@ section {
 
 .shop .slide {
   width: 35rem;
-  border: 0.2rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
 }
 .shop .slide:hover .icons {
   transform: translateY(0);
@@ -438,9 +436,8 @@ section {
   gap: 1rem;
 }
 .packages .box {
-  border: 0.2rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
   text-align: center;
   background: #e9c893;
   flex: 1 1 26rem;
@@ -490,9 +487,8 @@ section {
   color: #219150;
 }
 .packages .content .btn {
-  border: 0.2rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
   color: #333a56;
@@ -574,9 +570,8 @@ section {
 }
 .services .box {
   padding: 2rem;
-  border: 0.2rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
   text-align: center;
   background: #e9c893;
   flex: 1 1 30rem;
@@ -605,9 +600,8 @@ section {
   line-height: 2;
 }
 .services .btn {
-  border: 0.2rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
   color: #333a56;
@@ -674,9 +668,8 @@ section {
   color: #333a56;
 }
 .blogs .btn {
-  border: 0.2rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
   color: #333a56;
@@ -718,9 +711,8 @@ section {
   color: #333a56;
 }
 .newsletter form {
-  border: 0.2rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
   margin-top: 2rem;
   background: #e9c893;
   border-radius: 1rem;
@@ -736,9 +728,8 @@ section {
   padding: 0 1.3rem;
 }
 .newsletter .btn {
-  border: 0.2rem solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
   color: #333a56;
@@ -903,12 +894,20 @@ section {
     margin: 1rem 0;
     align-items: center;
     font-size: 4rem;
+    color: #e9c893 !important;
+  }
+  .navbar a:hover {
+    color: #77c9d4 !important;
   }
   #nav-close {
     display: block !important;
     position: absolute;
     top: 1rem;
     right: 2rem;
+    color: #e9c893 !important;
+  }
+  #nav-close:hover {
+    color: #77c9d4 !important;
   }
   .about {
     flex-wrap: wrap;
