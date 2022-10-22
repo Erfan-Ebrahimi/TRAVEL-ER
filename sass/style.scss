@@ -1,20 +1,36 @@
 //----------------     variables   ----------------//
-$green:rgb(33, 145, 80);
-$black:rgb(16, 34, 27);
-$white:#fff;
-$light-bg:rgba(238, 238, 238, 0.473);
-$box-shadow:0 1rem 1rem rgba(33, 145, 80, .5);
+$green1:#219150;
+$green2:#1e392a50;
+$green3:#3cc47ce3;
+$green4:#636b46;
+
+$red1:#76323f;
+$red2:#cf6766;
+
+$black1:#333a56;
+$black2:#233237;
+$black3:#08302f;
+$black4:#3c3c3c;
+$black5:#0b1f18;
+
+$blue:#77c9d4;
+
+$white1:rgb(255, 255, 255);
+$white2:#f7f5e6;
+$white3:#f4f4f4;
+$white4:#e9c893;
+$white5:#828081;
+$white6:#eeeeee79;
+
+
 $font-1:'Poppins', sans-serif;
 $font-2:'Fuzzy Bubbles', cursive;
 $font-3:'Montserrat', sans-serif;
 
+$box-shadow:0 1rem 1rem rgba(18, 11, 74, 0.523);
+
 
 //-----------------     MIXINS   -----------------//
-@mixin grid($val) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax($val,1fr));
-    gap:1.5rem;
-}
 @mixin box-style-background {
         @content; 
         min-height: 100vh;
@@ -23,7 +39,6 @@ $font-3:'Montserrat', sans-serif;
         background-size: cover !important;
         background-position: center !important;
         padding: 2rem 9%;
-           
 }
 @mixin border {
     @content; 
@@ -38,21 +53,21 @@ $font-3:'Montserrat', sans-serif;
     border-image-source:linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
     margin-top: 1rem;
     display: inline-block;
-    color: $black;
+    color: $black1;
     cursor: pointer;
     background: none;
     font-size: 1.7rem;
     font-family:$font-3;
     padding: 1rem 3rem;
     &:hover{
-        color: $white;
-        background: $black;
+        color: $white4;
+        background: $black1;
     }
 }
 @mixin h1{   
     @content; 
     font-size: 5rem;
-    color: $black;
+    color: $black1;
     text-align: center;
     margin-bottom: 4rem;
     border-bottom:.2rem solid;
@@ -80,7 +95,7 @@ $font-3:'Montserrat', sans-serif;
   transition: .3s linear;
 }
 html{
-    background: $light-bg;
+    background: $white1;
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -90,10 +105,10 @@ html{
         width: 1rem;
     }
     &::-webkit-scrollbar-track{
-        background: $white;
+        background: $white4;
     }
     &::-webkit-scrollbar-thumb{
-        background: $black;
+        background: $black1;
     }
 }
 section{
@@ -112,23 +127,19 @@ section{
     .logo{
        margin-right: auto;
        margin-left: 1rem;
-       font-size: 2.5rem;
-       color: $black;
+       font-size: 2.8rem;
+       color: $black1;
        font-weight: bolder;
        display: flex;
        align-content: center;
        align-items: stretch;
-    //    position: relative;
        i{
-        margin-top: .4rem;
-        color: $green;
+        margin-top: .1rem;
+        color: $green1;
         padding-right: .25rem;
-        // position: absolute;
-        // top: .8rem;
-        // left:-2.5rem;
        }
        .logo-dot{
-        color: $green;
+        color: $green1;
         font-size: 3rem;
        }
        span{
@@ -138,17 +149,17 @@ section{
     .navbar{
         a{
             margin-left: 2rem;
-            color: $black;
-            font-size: 2rem;
+            color: $black1;
+            font-size: 2.1rem;
         
         }
         a:hover{
-            color:$green;
+            color:$green1;
         }
         #nav-close{
             font-size:4rem;
             display: none;
-            color: $black;
+            color: $black1;
             cursor: pointer;
         }
     }
@@ -157,18 +168,28 @@ section{
         font-size: 2.5rem;
         margin-left: 2rem;
         cursor: pointer;
-        color: $black;
+        color: $black1;
     }
     .icons a:hover,
     .icons div:hover{
-        color: $green;
+        color: $green1;
     }
     #menu-btn{
         display: none;
     }
     &.active-h{
-        background: $white;
+        background: #333a56c2;
         box-shadow: $box-shadow;
+        a,div{
+            color: $white4;
+        }
+        .logo i , .logo-dot{
+            color: $white4;
+        }
+        .logo{
+            transition: .1s;
+            color:$white4;
+        }
     }
 }
 //--------------------  SEARCH   ------------------//
@@ -192,11 +213,11 @@ section{
         position: absolute;
         top: 2.5rem;
         right: 2.5rem;
-        color: $white;
+        color: $white4;
         cursor: pointer;
         font-size: 4rem;
         &:hover{
-            color: $green;
+            color: $green1;
 
         }
     }
@@ -211,22 +232,22 @@ section{
     input{
         width: 100%;
         font-size: 2.1rem;
-        color:$white;
+        color:$white4;
         background: none;
         text-transform: none;
         padding: 0.7rem;
         font-family: $font-3;
         &::placeholder{
-            color:$white;
+            color:$white4;
         }
     }
     label{
         font-size: 2.4rem;
         cursor: pointer;
-        color: $white;
+        color: $white4;
         padding-top: 1.5rem;
         &:hover{
-            color:$green;
+            color:$green1;
         }
     }
 }
@@ -255,17 +276,17 @@ section{
         max-width: 380px;
         span{
             font-size: 4rem;
-            color: $black;
+            color: $black1;
         }
         h3{
             font-size: 6rem;
-            color: $green;
+            color: $green1;
             padding-top: .5rem;
             text-transform: uppercase;
         }
         p{
             line-height: 2;
-            color: $black;
+            color: $black1;
             font-size: 1.5rem;
             padding: 1rem 0;
         }
@@ -276,7 +297,7 @@ section{
     .swiper-button-next::after,
     .swiper-button-prev::after{
         font-size: 3rem;
-        color: $black;
+        color: $black1;
         opacity: .7;
     }
 
@@ -308,11 +329,11 @@ section{
     }
     h3{
         font-size: 2rem;
-        color: $green;
+        color: $green1;
     }
     p{
         font-size: 1.6rem;
-        color: $black;
+        color: $black1;
         padding: 1rem 0;
         line-height: 2;
     }
@@ -327,7 +348,7 @@ section{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    background: $light-bg;
+    background: $white1;
     align-items: center;
     text-align: center;
     gap: 2rem;
@@ -343,12 +364,12 @@ section{
 
         h3{
             font-size: 3rem;
-            color: $green;
+            color: $green1;
         }
         p{
             font-size: 1.4rem;
             font-weight: 500;
-            color:$black;
+            color:$black1;
             padding:1rem 0;
             line-height: 2;
             text-align:center;
@@ -393,13 +414,13 @@ section{
             width: 4.5rem;
             line-height: 4.5rem;
             font-size: 1.7rem;
-            background: $black;
-            color: $white;
+            background: $black1;
+            color: $white4;
             margin: 0 .2rem;
             border-radius: 1rem;
         }
         .icons a:hover{
-            background: $green;
+            background: $green1;
         }
     }
     .content{
@@ -407,28 +428,28 @@ section{
         text-align: center;
         h3{
             font-size: 2rem;
-            color: $black;
+            color: $black1;
         }
         .price{
             padding: 1rem 0;
             font-size: 2.5rem;
-            color: $green;
+            color: $green1;
         }
         .stars i{
             font-size: 1.7rem;
-            color: $black;
+            color: $black1;
         }
     }
     .swiper-button-next::after,
     .swiper-button-prev::after{
         font-size: 3rem;
-        color: $black;
+        color: $black1;
         opacity: .7;
     }
 }
 //-------------------  PACKAGE   ------------------//
 .packages{
-    background: $light-bg;
+    background: $white1;
     h1{
     @include h1;
     }
@@ -441,20 +462,20 @@ section{
     .box{
         @include border;
         text-align: center;
-        background: $white;
+        background: $white4;
         flex: 1 1 26rem;
     }
     .box:hover{
-        background: $black;
+        background: $black1;
         .content p , a{
-            color: $white;
+            color: $white4;
         }
         .content h3{
-            color: $green;
+            color: $green1;
         }
         .btn:hover{
-            background: $white;
-            color: $black;
+            background: $white4;
+            color: $black1;
         }
     }
     .image{
@@ -474,17 +495,17 @@ section{
         padding: 2rem;
         h3{
             font-size: 2rem;
-            color: $black;
+            color: $black1;
         }
         p{
             font-size: 1.5rem;
-            color: $black;
+            color: $black1;
             padding:1rem 0;
             line-height: 2;
         }
         .price{
             font-size: 2rem;
-            color: $green;
+            color: $green1;
         }
         .btn{
             @include btn;
@@ -506,7 +527,7 @@ section{
             border-radius: 50%;
         }
         span{
-            color: $green;
+            color: $green1;
             font-size: 1.5rem;
         }
     }
@@ -528,7 +549,7 @@ section{
         font-style: italic;
         background: rgb(76, 110, 78);
         border-radius: 1rem;
-        color: $white;
+        color: $white4;
         line-height: 2;
         z-index: 0;
         margin-top: 3rem;
@@ -538,7 +559,7 @@ section{
 }
 //-------------------  SERVICES   -----------------//
 .services{
-    background: $light-bg;
+    background: $white1;
     h1{
         @include h1;
     }
@@ -552,29 +573,29 @@ section{
         padding: 2rem;
         @include border;
         text-align: center;
-        background: $white;
+        background: $white4;
         flex: 1 1 30rem;
     }
     .box:hover{
-        background:$green;
+        background:$green1;
          *{
-            color: $white;
+            color: $white4;
         }
         h3{
-            color: $black;
+            color: $black1;
         }
         .btn:hover{
-            background: $white;
-            color: $black;
+            background: $white4;
+            color: $black1;
         }
     }
     h3{
         font-size: 2rem;
-        color: $black;
+        color: $black1;
     }
     p{
         font-size: 1.5rem;
-        color: $black;
+        color: $black1;
         padding:1rem 0;
         line-height: 2;
     }
@@ -603,31 +624,31 @@ section{
         position: relative;
         border-radius: 1rem;
         padding: 1rem;
-        background: $black;
+        background: $black1;
         top: -2rem;
         display: inline-block;
         a{
             font-size: 1.4rem;
-            color: $white;
+            color: $white4;
             margin: 0 1rem;
         }
         a:hover{
-            color: $green;
+            color: $green1;
         }
         i{
             padding-right: .5rem;
-            color: $green;
+            color: $green1;
         }
     }
     h3{
         font-size: 2rem;
-        color: $black;
+        color: $black1;
     }
     p{
         font-size: 1.5rem;
         padding: 1rem 0;
         line-height: 2;
-        color: $black;
+        color: $black1;
     }
     .btn{
         @include btn;
@@ -639,7 +660,7 @@ section{
 }
 //------------------ NEWSLETTER   -----------------//
 .newsletter{
-    background: $light-bg;
+    background: $white1;
     h1{
         @include h1;
     }
@@ -651,12 +672,12 @@ section{
     p{
         font-size: 1.5rem;
         line-height: 2;
-        color: $black;
+        color: $black1;
     }
     form{
         @include border;
         margin-top: 2rem;
-        background: $white;
+        background: $white4;
         border-radius: 1rem;
         padding: .7rem;
         display: flex;
@@ -666,18 +687,18 @@ section{
         background: none;
         text-transform: none;
         font-size: 1.9rem;
-        color: $black;
+        color: $black1;
         padding: 0 1.3rem;
     }
     .btn{
         @include btn;
         margin-top: 0;
-        background: $black;
-        color: $white;
+        background: $black1;
+        color: $white4;
     }
     .btn:hover{
         background: none;
-        color: $black;
+        color: $black1;
     }
 }
 //------------------  CLIENTS   -------------------//
@@ -685,7 +706,7 @@ section{
     .swiper-button-next::after,
     .swiper-button-prev::after{
         font-size: 3rem;
-        color: $black;
+        color: $black1;
         position: absolute;
     }
 }
@@ -710,23 +731,23 @@ section{
     h3{
         font-size: 2rem;
         padding: 1.5rem 0;
-        color: $white;
+        color: $white4;
     }
     a{
         display: block;
         font-size: 1.5rem;
-        color: $white;
+        color: $white4;
         padding: 1rem;
         font-weight: 600;
     }
     i{
-        color: $green;
+        color: $green1;
         padding-right: .5rem;
         font-size: 2rem;
     }
     .box:hover{
         *{
-            color: $green;
+            color: $green1;
         }
         i{
             color: rgb(11, 221, 22);
@@ -744,7 +765,7 @@ section{
         padding: 1rem;
         padding-top: 2.5rem;
         font-size: 2rem;
-        color: $white;
+        color: $white4;
         span{
             color: burlywood;
         }
@@ -831,9 +852,12 @@ section{
         position: fixed;
         top: 0;
         left:-110%;
-        background: $white;
+        background: linear-gradient(rgb(40 235 132 / 53%), rgb(255 0 0 / 41%)),url(../images/footer-bg.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
         z-index: 100;
-        width: 35rem;
+        width: 27rem;
         height: 100%;
         display: flex;
         flex-flow: column;
