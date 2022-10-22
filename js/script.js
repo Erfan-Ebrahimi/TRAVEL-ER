@@ -42,7 +42,6 @@ var swiper = new Swiper(".home-slider", {
       prevEl: ".swiper-button-prev",
     },
   });
-
 //------------------- baray shop slide  ------------------//
 var swiper = new Swiper(".product-slider", {
    spaceBetween: 10,
@@ -52,7 +51,7 @@ var swiper = new Swiper(".product-slider", {
    centeredSlides: true,
    slidesPerView: "auto",
    coverflowEffect: {
-          rotate: 30,
+          rotate: 150,
           stretch: 0,
           depth: 100,
           modifier: 2,

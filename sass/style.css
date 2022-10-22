@@ -14,7 +14,7 @@
 }
 
 html {
-  background: rgb(255, 255, 255);
+  background: #f4f4f4;
   font-size: 62.5%;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -102,7 +102,7 @@ section {
   color: #e9c893;
 }
 .header.active-h .logo i, .header.active-h .logo-dot {
-  color: #e9c893;
+  color: #46ff88;
 }
 .header.active-h .logo {
   transition: 0.1s;
@@ -207,14 +207,13 @@ section {
 .home .content {
   width: 50rem;
   text-align: center;
-  max-width: 380px;
 }
 .home .content span {
-  font-size: 4rem;
+  font-size: 4.5rem;
   color: #333a56;
 }
 .home .content h3 {
-  font-size: 6rem;
+  font-size: 8rem;
   color: #219150;
   padding-top: 0.5rem;
   text-transform: uppercase;
@@ -222,20 +221,22 @@ section {
 .home .content p {
   line-height: 2;
   color: #333a56;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   padding: 1rem 0;
+  font-weight: 500;
 }
 .home .content .btn {
   border: 0.2rem solid #08302f;
   border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
-  color: #333a56;
+  color: #08302f;
   cursor: pointer;
   background: none;
   font-size: 1.7rem;
   font-family: "Montserrat", sans-serif;
   padding: 1rem 3rem;
+  font-weight: 600;
 }
 .home .content .btn:hover {
   color: #e9c893;
@@ -253,7 +254,7 @@ section {
   color: #333a56;
   text-align: center;
   margin-bottom: 4rem;
-  border-bottom: 0.2rem solid;
+  border-bottom: 0.3rem solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
 }
@@ -261,15 +262,19 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  gap: 1rem;
 }
 .category .box {
   text-align: center;
   padding: 2rem;
   border-radius: 1rem;
+  border: 0.2rem solid #08302f;
+  border-radius: 0.5rem;
+  background: #e3f7c7;
 }
 .category .box:hover {
   box-shadow: 0 1rem 1rem rgba(18, 11, 74, 0.523);
-  padding: 1rem;
+  padding-top: 1rem;
 }
 .category img {
   height: 20rem;
@@ -283,22 +288,24 @@ section {
 }
 .category p {
   font-size: 1.6rem;
-  color: #333a56;
+  color: #0b1f18;
   padding: 1rem 0;
   line-height: 2;
+  font-weight: 500;
 }
 .category .btn {
   border: 0.2rem solid #08302f;
   border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
-  color: #333a56;
+  color: #08302f;
   cursor: pointer;
   background: none;
   font-size: 1.7rem;
   font-family: "Montserrat", sans-serif;
   padding: 1rem 3rem;
-  font-weight: 800;
+  font-weight: 600;
+  font-weight: 600;
 }
 .category .btn:hover {
   color: #e9c893;
@@ -309,9 +316,10 @@ section {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  background: rgb(255, 255, 255);
+  background: #f4f4f4;
   align-items: center;
   text-align: center;
+  justify-content: center;
   gap: 2rem;
 }
 .about .image {
@@ -322,12 +330,15 @@ section {
   box-shadow: 1rem 1rem 1rem rgba(33, 145, 80, 0.32);
   border-radius: 1rem;
 }
+.about .content {
+  width: 90rem;
+}
 .about .content h3 {
-  font-size: 3rem;
+  font-size: 4.2rem;
   color: #219150;
 }
 .about .content p {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 500;
   color: #333a56;
   padding: 1rem 0;
@@ -339,18 +350,22 @@ section {
   border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
-  color: #333a56;
+  color: #08302f;
   cursor: pointer;
   background: none;
   font-size: 1.7rem;
   font-family: "Montserrat", sans-serif;
   padding: 1rem 3rem;
+  font-weight: 600;
 }
 .about .content .btn:hover {
   color: #e9c893;
   background: #333a56;
 }
 
+.shop {
+  background: #f4f4f4;
+}
 .shop .slide {
   width: 35rem;
   border: 0.2rem solid #08302f;
@@ -418,14 +433,14 @@ section {
 }
 
 .packages {
-  background: rgb(255, 255, 255);
+  background: #f4f4f4;
 }
 .packages h1 {
   font-size: 5rem;
   color: #333a56;
   text-align: center;
   margin-bottom: 4rem;
-  border-bottom: 0.2rem solid;
+  border-bottom: 0.3rem solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
 }
@@ -491,12 +506,13 @@ section {
   border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
-  color: #333a56;
+  color: #08302f;
   cursor: pointer;
   background: none;
   font-size: 1.7rem;
   font-family: "Montserrat", sans-serif;
   padding: 1rem 3rem;
+  font-weight: 600;
 }
 .packages .content .btn:hover {
   color: #e9c893;
@@ -508,7 +524,7 @@ section {
   color: #333a56;
   text-align: center;
   margin-bottom: 4rem;
-  border-bottom: 0.2rem solid;
+  border-bottom: 0.3rem solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
 }
@@ -558,7 +574,7 @@ section {
   color: #333a56;
   text-align: center;
   margin-bottom: 4rem;
-  border-bottom: 0.2rem solid;
+  border-bottom: 0.3rem solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
 }
@@ -604,12 +620,13 @@ section {
   border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
-  color: #333a56;
+  color: #08302f;
   cursor: pointer;
   background: none;
   font-size: 1.7rem;
   font-family: "Montserrat", sans-serif;
   padding: 1rem 3rem;
+  font-weight: 600;
 }
 .services .btn:hover {
   color: #e9c893;
@@ -621,7 +638,7 @@ section {
   color: #333a56;
   text-align: center;
   margin-bottom: 4rem;
-  border-bottom: 0.2rem solid;
+  border-bottom: 0.3rem solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
 }
@@ -672,12 +689,13 @@ section {
   border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
-  color: #333a56;
+  color: #08302f;
   cursor: pointer;
   background: none;
   font-size: 1.7rem;
   font-family: "Montserrat", sans-serif;
   padding: 1rem 3rem;
+  font-weight: 600;
 }
 .blogs .btn:hover {
   color: #e9c893;
@@ -696,7 +714,7 @@ section {
   color: #333a56;
   text-align: center;
   margin-bottom: 4rem;
-  border-bottom: 0.2rem solid;
+  border-bottom: 0.3rem solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
 }
@@ -732,12 +750,13 @@ section {
   border-radius: 0.5rem;
   margin-top: 1rem;
   display: inline-block;
-  color: #333a56;
+  color: #08302f;
   cursor: pointer;
   background: none;
   font-size: 1.7rem;
   font-family: "Montserrat", sans-serif;
   padding: 1rem 3rem;
+  font-weight: 600;
   margin-top: 0;
   background: #333a56;
   color: #e9c893;
