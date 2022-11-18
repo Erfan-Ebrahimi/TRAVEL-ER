@@ -51,10 +51,10 @@ var swiper = new Swiper(".product-slider", {
    centeredSlides: true,
    slidesPerView: "auto",
    coverflowEffect: {
-          rotate: 150,
+          rotate: 30,
           stretch: 0,
           depth: 100,
-          modifier: 2,
+          modifier: 1,
           slideShadows: true,
         },
    autoplay: {

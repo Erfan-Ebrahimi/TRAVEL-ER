@@ -366,10 +366,18 @@ section {
 .shop {
   background: #f4f4f4;
 }
+.shop h1 {
+  font-size: 5rem;
+  color: #333a56;
+  text-align: center;
+  margin-bottom: 4rem;
+  border-bottom: 0.3rem solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(99deg, rgb(33, 145, 80) 31%, rgb(16, 34, 27) 100%);
+}
 .shop .slide {
   width: 35rem;
-  border: 0.2rem solid #08302f;
-  border-radius: 0.5rem;
+  background: #0b1f18;
 }
 .shop .slide:hover .icons {
   transform: translateY(0);
@@ -414,7 +422,7 @@ section {
 }
 .shop .content h3 {
   font-size: 2rem;
-  color: #333a56;
+  color: #e9c893;
 }
 .shop .content .price {
   padding: 1rem 0;
@@ -423,7 +431,7 @@ section {
 }
 .shop .content .stars i {
   font-size: 1.7rem;
-  color: #333a56;
+  color: #cf6766;
 }
 .shop .swiper-button-next::after,
 .shop .swiper-button-prev::after {
@@ -830,8 +838,8 @@ section {
   font-size: 2rem;
   color: #e9c893;
 }
-.footer .credit span {
-  color: burlywood;
+.footer .credit img {
+  width: 40px;
 }
 
 @media (min-width: 1200px) {
